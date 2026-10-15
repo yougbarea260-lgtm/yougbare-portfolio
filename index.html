@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Portfolio de Yougbare Ahmed Boudnoma, étudiant en génie informatique à Marrakech. Projets en développement web, IA et automatisation.">
+  <title>Yougbare Ahmed Boudnoma | Portfolio</title>
+  <style>
+    :root{--bg:#080d1a;--panel:#10182b;--panel2:#141f36;--text:#f4f7ff;--muted:#a6b2ca;--line:rgba(177,196,231,.16);--blue:#65a8ff;--violet:#a78bfa;--green:#67e8c0;--max:1120px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{margin:0;background:radial-gradient(ellipse at 85% 0%,rgba(88,94,220,.18),transparent 35%),radial-gradient(ellipse at 0% 40%,rgba(45,139,209,.11),transparent 30%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(18px);background:rgba(8,13,26,.78);border-bottom:1px solid var(--line)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:20px}
+    .brand{font-weight:800;letter-spacing:.02em;display:flex;align-items:center;gap:10px}
+    .brand-mark{display:grid;place-items:center;width:35px;height:35px;border-radius:11px;background:linear-gradient(135deg,var(--blue),var(--violet));color:#07101e;font-weight:900}
+    .links{display:flex;align-items:center;gap:22px;color:var(--muted);font-size:.92rem}
+    .links a:hover,.links a:focus{color:var(--text)}
+    .nav-actions{display:flex;gap:8px;align-items:center}
+    .lang,.menu-btn{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:10px;padding:8px 11px;cursor:pointer}
+    .menu-btn{display:none}
+    .hero{padding:92px 0 72px;display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:center;min-height:590px}
+    .eyebrow{display:inline-flex;gap:9px;align-items:center;color:var(--green);font-size:.82rem;font-weight:750;text-transform:uppercase;letter-spacing:.13em}
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 15px var(--green)}
+    h1{font-size:clamp(2.7rem,6vw,5.1rem);line-height:1.02;letter-spacing:-.055em;margin:20px 0}
+    .gradient{background:linear-gradient(100deg,#f7f9ff 5%,#90c2ff 48%,#b7a1ff 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{font-size:1.12rem;color:var(--muted);max-width:650px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;border-radius:12px;padding:12px 17px;font-weight:750;border:1px solid var(--line);transition:transform .2s,border-color .2s}
+    .btn:hover{transform:translateY(-2px);border-color:rgba(101,168,255,.7)}
+    .primary{background:linear-gradient(115deg,#79b8ff,#a99aff);color:#081020;border:0}
+    .hero-card{position:relative;border:1px solid var(--line);border-radius:26px;padding:24px;background:linear-gradient(145deg,rgba(20,31,54,.94),rgba(12,19,35,.9));box-shadow:0 30px 90px rgba(0,0,0,.25);overflow:hidden}
+    .hero-card:before{content:"";position:absolute;width:210px;height:210px;border-radius:50%;background:rgba(115,135,255,.17);filter:blur(40px);right:-75px;top:-90px}
+    .terminal{position:relative;border:1px solid var(--line);background:#080e1b;border-radius:16px;padding:19px;font: .9rem/1.9 ui-monospace,SFMono-Regular,Menlo,monospace;color:#c7d4ef}
+    .term-head{display:flex;gap:6px;margin-bottom:16px}.term-head i{display:block;width:8px;height:8px;border-radius:50%;background:#64748b}
+    .code-blue{color:#83baff}.code-violet{color:#c4a7ff}.code-green{color:#6de7bc}
+    .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:13px}
+    .mini{padding:12px;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.025)}
+    .mini strong{display:block;font-size:.9rem}.mini span{font-size:.78rem;color:var(--muted)}
+    section{padding:75px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:30px}
+    .kicker{color:var(--blue);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.15em}
+    h2{font-size:clamp(1.9rem,4vw,3rem);line-height:1.1;letter-spacing:-.035em;margin:9px 0 0}
+    .section-intro{max-width:510px;color:var(--muted);margin:0}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(16,24,43,.9),rgba(12,18,32,.9));border-radius:20px;padding:24px}
+    .card h3{margin:0 0 9px;font-size:1.12rem}.card p{margin:0;color:var(--muted)}
+    .facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+    .fact{border-left:2px solid var(--blue);padding-left:12px}.fact strong{display:block}.fact span{color:var(--muted);font-size:.88rem}
+    .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .project{display:flex;flex-direction:column;min-height:290px;position:relative;overflow:hidden}
+    .project-top{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:18px}
+    .project-icon{display:grid;place-items:center;width:45px;height:45px;border-radius:14px;background:linear-gradient(135deg,rgba(101,168,255,.2),rgba(167,139,250,.18));border:1px solid var(--line);font-size:1.25rem}
+    .status{font-size:.72rem;font-weight:750;color:var(--green);border:1px solid rgba(103,232,192,.25);background:rgba(103,232,192,.07);padding:5px 9px;border-radius:100px}
+    .project p{flex:1}.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
+    .tag{font-size:.76rem;color:#d0dbf2;border:1px solid var(--line);border-radius:8px;padding:4px 8px;background:rgba(255,255,255,.025)}
+    .skill-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .skill{padding:18px;border:1px solid var(--line);background:rgba(16,24,43,.72);border-radius:16px}
+    .skill .symbol{font-size:1.4rem}.skill h3{font-size:.97rem;margin:8px 0 5px}.skill p{font-size:.84rem;color:var(--muted);margin:0}
+    .timeline{display:grid;gap:12px}
+    .timeline-item{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+    .timeline-item time{font-size:.82rem;color:var(--blue);font-weight:800}.timeline-item h3{margin:0 0 5px;font-size:1.02rem}.timeline-item p{margin:0;color:var(--muted)}
+    .contact-panel{display:grid;grid-template-columns:1fr auto;align-items:center;gap:30px;padding:34px;border:1px solid var(--line);border-radius:24px;background:radial-gradient(ellipse at 100% 0%,rgba(115,135,255,.15),transparent 45%),var(--panel)}
+    .contact-panel p{color:var(--muted);max-width:620px;margin-bottom:0}
+    .contact-links{display:flex;flex-direction:column;gap:10px}
+    footer{padding:28px 0 35px;color:var(--muted);font-size:.82rem;border-top:1px solid var(--line)}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    @media(max-width:850px){.hero{grid-template-columns:1fr;gap:35px;padding-top:65px;min-height:unset}.hero-card{max-width:560px}.skill-grid{grid-template-columns:repeat(2,1fr)}.section-head{align-items:start;flex-direction:column}.contact-panel{grid-template-columns:1fr}.contact-links{flex-direction:row;flex-wrap:wrap}}
+    @media(max-width:650px){.wrap{width:min(var(--max),calc(100% - 28px))}.links{display:none;position:absolute;top:71px;left:0;right:0;padding:18px 22px 22px;background:#0b1223;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.links.open{display:flex}.menu-btn{display:block}.hero{padding:52px 0 48px}section{padding:55px 0}.about-grid,.project-grid{grid-template-columns:1fr}.timeline-item{grid-template-columns:1fr;gap:5px}.contact-panel{padding:23px}.facts{grid-template-columns:1fr 1fr}h1{font-size:clamp(2.55rem,13vw,4rem)}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#home" aria-label="Accueil"><span class="brand-mark">YB</span><span>YOUGBARE<span style="color:var(--blue)">.</span></span></a>
+      <nav class="links" id="navLinks" aria-label="Navigation principale">
+        <a href="#about" data-fr="À propos" data-en="About">À propos</a>
+        <a href="#projects" data-fr="Projets" data-en="Projects">Projets</a>
+        <a href="#skills" data-fr="Compétences" data-en="Skills">Compétences</a>
+        <a href="#journey" data-fr="Parcours" data-en="Journey">Parcours</a>
+        <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
+      </nav>
+      <div class="nav-actions"><button class="lang" id="langBtn" type="button" aria-label="Switch language">EN</button><button class="menu-btn" id="menuBtn" type="button" aria-label="Ouvrir le menu">☰</button></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="home">
+      <div class="reveal visible">
+        <div class="eyebrow"><span class="dot"></span><span data-fr="Étudiant en génie informatique" data-en="Computer Engineering Student">Étudiant en génie informatique</span></div>
+        <h1><span data-fr="Construire" data-en="Building">Construire</span><br><span class="gradient" data-fr="des solutions utiles." data-en="useful solutions.">des solutions utiles.</span></h1>
+        <p class="lead" data-fr="Je suis Yougbare Ahmed Boudnoma, étudiant en génie informatique à Marrakech. Je m'intéresse au développement logiciel, à l'intelligence artificielle et à l'automatisation, avec une approche orientée projets et résolution de problèmes." data-en="I'm Yougbare Ahmed Boudnoma, a Computer Engineering student in Marrakech. I'm interested in software development, artificial intelligence and automation, with a project-driven approach to problem solving.">Je suis Yougbare Ahmed Boudnoma, étudiant en génie informatique à Marrakech. Je m'intéresse au développement logiciel, à l'intelligence artificielle et à l'automatisation, avec une approche orientée projets et résolution de problèmes.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects"><span data-fr="Découvrir mes projets" data-en="Explore my projects">Découvrir mes projets</span> <span aria-hidden="true">↗</span></a>
+          <a class="btn" href="#contact"><span data-fr="Me contacter" data-en="Contact me">Me contacter</span></a>
+        </div>
+      </div>
+      <div class="hero-card reveal" aria-label="Aperçu technique">
+        <div class="terminal">
+          <div class="term-head"><i></i><i></i><i></i></div>
+          <div><span class="code-violet">const</span> developer = {</div>
+          <div>&nbsp; name: <span class="code-green">'Yougbare Ahmed'</span>,</div>
+          <div>&nbsp; focus: [</div>
+          <div>&nbsp;&nbsp; <span class="code-green">'Web development'</span>,</div>
+          <div>&nbsp;&nbsp; <span class="code-green">'AI & automation'</span>,</div>
+          <div>&nbsp;&nbsp; <span class="code-green">'Software projects'</span></div>
+          <div>&nbsp; ],</div>
+          <div>&nbsp; mindset: <span class="code-blue">'Keep building'</span></div>
+          <div>};<span class="code-violet"> ▌</span></div>
+        </div>
+        <div class="mini-grid">
+          <div class="mini"><strong>Web</strong><span data-fr="Interfaces & sites" data-en="Interfaces & websites">Interfaces & sites</span></div>
+          <div class="mini"><strong>AI</strong><span data-fr="Assistants & outils" data-en="Assistants & tools">Assistants & outils</span></div>
+          <div class="mini"><strong>Automation</strong><span data-fr="Workflows" data-en="Workflows">Workflows</span></div>
+          <div class="mini"><strong>Learning</strong><span data-fr="Progression continue" data-en="Continuous learning">Progression continue</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="kicker" data-fr="Présentation" data-en="Introduction">Présentation</div><h2 data-fr="À propos de moi" data-en="About me">À propos de moi</h2></div><p class="section-intro" data-fr="Un profil en construction, avec une priorité : transformer les idées en prototypes concrets, les tester, puis les améliorer." data-en="A developing profile with one priority: turn ideas into concrete prototypes, test them, and improve them.">Un profil en construction, avec une priorité : transformer les idées en prototypes concrets, les tester, puis les améliorer.</p></div>
+        <div class="about-grid">
+          <article class="card reveal">
+            <h3 data-fr="Mon profil" data-en="My profile">Mon profil</h3>
+            <p data-fr="Originaire du Burkina Faso et basé à Marrakech, je poursuis des études en génie informatique à la Faculté des Sciences et Techniques de l'Université Cadi Ayyad. Mes projets personnels m'amènent à explorer le développement web, les assistants IA et les systèmes d'automatisation." data-en="Originally from Burkina Faso and based in Marrakech, I study Computer Engineering at the Faculty of Sciences and Techniques of Cadi Ayyad University. My personal projects let me explore web development, AI assistants and automation systems.">Originaire du Burkina Faso et basé à Marrakech, je poursuis des études en génie informatique à la Faculté des Sciences et Techniques de l'Université Cadi Ayyad. Mes projets personnels m'amènent à explorer le développement web, les assistants IA et les systèmes d'automatisation.</p>
+            <div class="facts">
+              <div class="fact"><strong>FST Marrakech</strong><span data-fr="Formation" data-en="Education">Formation</span></div>
+              <div class="fact"><strong>Burkinabè</strong><span data-fr="Origine" data-en="Background">Origine</span></div>
+              <div class="fact"><strong>Français</strong><span data-fr="Langue" data-en="Language">Langue</span></div>
+              <div class="fact"><strong>English</strong><span data-fr="Langue" data-en="Language">Langue</span></div>
+            </div>
+          </article>
+          <article class="card reveal">
+            <h3 data-fr="Ce qui me motive" data-en="What motivates me">Ce qui me motive</h3>
+            <p data-fr="Comprendre comment les systèmes fonctionnent, résoudre les problèmes techniques et créer des outils qui ont une utilité réelle. Je m'intéresse particulièrement à l'automatisation et à la manière dont l'IA peut s'intégrer à des applications concrètes." data-en="Understanding how systems work, solving technical problems and creating tools with practical value. I'm particularly interested in automation and how AI can be integrated into useful applications.">Comprendre comment les systèmes fonctionnent, résoudre les problèmes techniques et créer des outils qui ont une utilité réelle. Je m'intéresse particulièrement à l'automatisation et à la manière dont l'IA peut s'intégrer à des applications concrètes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="kicker" data-fr="Travaux sélectionnés" data-en="Selected work">Travaux sélectionnés</div><h2 data-fr="Projets" data-en="Projects">Projets</h2></div><p class="section-intro" data-fr="Des projets en conception, prototypage ou développement. Les statuts sont précisés pour distinguer le travail réalisé des objectifs encore en cours." data-en="Projects in planning, prototyping or development. Status notes distinguish completed work from ongoing goals.">Des projets en conception, prototypage ou développement. Les statuts sont précisés pour distinguer le travail réalisé des objectifs encore en cours.</p></div>
+        <div class="project-grid">
+          <article class="card project reveal">
+            <div class="project-top"><div class="project-icon">🎓</div><span class="status" data-fr="Concept & planification" data-en="Concept & planning">Concept & planification</span></div>
+            <h3>EduSmart</h3>
+            <p data-fr="Concept de plateforme de micro-apprentissage pour les programmes scolaires et universitaires marocains : parcours par modules, leçons courtes, exercices, progression et assistance IA." data-en="Micro-learning platform concept for Moroccan secondary and university curricula, with module-based paths, short lessons, exercises, progress tracking and AI assistance.">Concept de plateforme de micro-apprentissage pour les programmes scolaires et universitaires marocains : parcours par modules, leçons courtes, exercices, progression et assistance IA.</p>
+            <div class="tags"><span class="tag">EdTech</span><span class="tag">React Native</span><span class="tag">UX / Architecture</span></div>
+          </article>
+          <article class="card project reveal">
+            <div class="project-top"><div class="project-icon">🏫</div><span class="status" data-fr="Prototype développé" data-en="Prototype developed">Prototype développé</span></div>
+            <h3>YAABA BEOGO BIIGA</h3>
+            <p data-fr="Prototype de site vitrine pour une école primaire au Burkina Faso, avec présentation de l'établissement, niveaux, matières, admissions, galerie et contact." data-en="Showcase website prototype for a primary school in Burkina Faso, with school information, grade levels, subjects, admissions, gallery and contact sections.">Prototype de site vitrine pour une école primaire au Burkina Faso, avec présentation de l'établissement, niveaux, matières, admissions, galerie et contact.</p>
+            <div class="tags"><span class="tag">React</span><span class="tag">CSS</span><span class="tag">Vite</span></div>
+          </article>
+          <article class="card project reveal">
+            <div class="project-top"><div class="project-icon">🤖</div><span class="status" data-fr="Développement & tests" data-en="Development & testing">Développement & tests</span></div>
+            <h3>JARVIS</h3>
+            <p data-fr="Assistant IA personnel en Python explorant la capture audio, la reconnaissance vocale, l'utilisation d'un modèle local via Ollama et les réponses vocales. Des tests et corrections ont été réalisés, sans prétendre que toutes les fonctions sont finalisées." data-en="Python-based personal AI assistant exploring audio capture, speech recognition, a local model through Ollama and voice responses. Testing and fixes have been performed; not every planned feature is claimed to be complete.">Assistant IA personnel en Python explorant la capture audio, la reconnaissance vocale, l'utilisation d'un modèle local via Ollama et les réponses vocales. Des tests et corrections ont été réalisés, sans prétendre que toutes les fonctions sont finalisées.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">Ollama</span><span class="tag">Whisper</span></div>
+          </article>
+          <article class="card project reveal">
+            <div class="project-top"><div class="project-icon">⚙️</div><span class="status" data-fr="Prototype & simulation" data-en="Prototype & simulation">Prototype & simulation</span></div>
+            <h3>YougTech</h3>
+            <p data-fr="Initiative de services numériques autour des sites vitrines et de workflows de prospection. Le mode de démonstration permet de tester la génération de briefs, la validation de prototypes et des brouillons sans envoyer de messages." data-en="Digital services initiative focused on showcase websites and prospecting workflows. Demo mode tests brief generation, prototype validation and draft messages without sending communications.">Initiative de services numériques autour des sites vitrines et de workflows de prospection. Le mode de démonstration permet de tester la génération de briefs, la validation de prototypes et des brouillons sans envoyer de messages.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">SQLite</span><span class="tag">Vercel</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="kicker" data-fr="Boîte à outils" data-en="Toolbox">Boîte à outils</div><h2 data-fr="Compétences & technologies" data-en="Skills & technologies">Compétences & technologies</h2></div><p class="section-intro" data-fr="Technologies utilisées ou explorées dans le cadre de projets. Le niveau de maîtrise n'est pas artificiellement gonflé." data-en="Technologies used or explored in projects. Proficiency is not artificially inflated.">Technologies utilisées ou explorées dans le cadre de projets. Le niveau de maîtrise n'est pas artificiellement gonflé.</p></div>
+        <div class="skill-grid">
+          <article class="skill reveal"><div class="symbol">⌘</div><h3 data-fr="Développement web" data-en="Web development">Développement web</h3><p>HTML · CSS · JavaScript · React · Vite</p></article>
+          <article class="skill reveal"><div class="symbol">🐍</div><h3>Python</h3><p data-fr="Scripts, logique, tests et débogage" data-en="Scripting, logic, testing and debugging">Scripts, logique, tests et débogage</p></article>
+          <article class="skill reveal"><div class="symbol">🧠</div><h3 data-fr="IA & voix" data-en="AI & voice">IA & voix</h3><p>Ollama · Faster-Whisper · API</p></article>
+          <article class="skill reveal"><div class="symbol">📱</div><h3 data-fr="Mobile" data-en="Mobile">Mobile</h3><p>React Native · TypeScript · Android</p></article>
+          <article class="skill reveal"><div class="symbol">🗄️</div><h3 data-fr="Données" data-en="Data">Données</h3><p>SQLite · structures de données</p></article>
+          <article class="skill reveal"><div class="symbol">🧪</div><h3 data-fr="Tests & qualité" data-en="Testing & quality">Tests & qualité</h3><p data-fr="Tests automatisés · simulation · diagnostic" data-en="Automated tests · simulation · diagnostics">Tests automatisés · simulation · diagnostic</p></article>
+          <article class="skill reveal"><div class="symbol">🚀</div><h3>Outils</h3><p>VS Code · Vercel</p></article>
+          <article class="skill reveal"><div class="symbol">⚡</div><h3 data-fr="Fondamentaux" data-en="Fundamentals">Fondamentaux</h3><p data-fr="Algorithmique · automatisme · électronique" data-en="Algorithms · automation · electronics">Algorithmique · automatisme · électronique</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="journey">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="kicker" data-fr="Formation & engagement" data-en="Education & engagement">Formation & engagement</div><h2 data-fr="Mon parcours" data-en="My journey">Mon parcours</h2></div><p class="section-intro" data-fr="Un aperçu de ma formation et des activités de projet documentées." data-en="An overview of my education and documented project activities.">Un aperçu de ma formation et des activités de projet documentées.</p></div>
+        <div class="timeline">
+          <div class="timeline-item reveal"><time data-fr="Formation actuelle" data-en="Current education">Formation actuelle</time><div><h3 data-fr="Génie informatique · FST Marrakech" data-en="Computer Engineering · FST Marrakech">Génie informatique · FST Marrakech</h3><p data-fr="Deuxième année d'études à la Faculté des Sciences et Techniques de l'Université Cadi Ayyad." data-en="Second year of study at the Faculty of Sciences and Techniques of Cadi Ayyad University.">Deuxième année d'études à la Faculté des Sciences et Techniques de l'Université Cadi Ayyad.</p></div></div>
+          <div class="timeline-item reveal"><time data-fr="Projets personnels" data-en="Personal projects">Projets personnels</time><div><h3 data-fr="Développement web, IA et automatisation" data-en="Web development, AI and automation">Développement web, IA et automatisation</h3><p data-fr="Conception et prototypage d'outils numériques, avec des cycles de test, de correction et d'amélioration." data-en="Design and prototyping of digital tools, using cycles of testing, debugging and improvement.">Conception et prototypage d'outils numériques, avec des cycles de test, de correction et d'amélioration.</p></div></div>
+          <div class="timeline-item reveal"><time>AEBM</time><div><h3 data-fr="Communication et design associatif" data-en="Association communication and design">Communication et design associatif</h3><p data-fr="Contribution à la préparation de supports visuels, messages communautaires et idées de communication numérique autour de l'association étudiante burkinabè au Maroc." data-en="Contributed to visual materials, community messaging and digital communication ideas connected with the Burkinabè student association in Morocco.">Contribution à la préparation de supports visuels, messages communautaires et idées de communication numérique autour de l'association étudiante burkinabè au Maroc.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-panel reveal">
+          <div><div class="kicker" data-fr="Restons en contact" data-en="Get in touch">Restons en contact</div><h2 data-fr="Une idée, un stage ou un projet ?" data-en="An idea, internship or project?">Une idée, un stage ou un projet ?</h2><p data-fr="Pour une collaboration, une opportunité de stage ou une discussion autour du développement logiciel et de l'automatisation, vous pouvez me contacter par e-mail." data-en="For a collaboration, internship opportunity or discussion about software development and automation, you can reach me by email.">Pour une collaboration, une opportunité de stage ou une discussion autour du développement logiciel et de l'automatisation, vous pouvez me contacter par e-mail.</p></div>
+          <div class="contact-links">
+            <a class="btn primary" href="mailto:a.yougbare0039@uca.ac.ma">✉ <span data-fr="Envoyer un e-mail" data-en="Send an email">Envoyer un e-mail</span></a>
+            <button class="btn" id="copyEmail" type="button">⧉ <span data-fr="Copier l'e-mail" data-en="Copy email">Copier l'e-mail</span></button>
+            <span id="copyNotice" role="status" style="font-size:.8rem;color:var(--green)"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-inner"><span>© <span id="year"></span> Yougbare Ahmed Boudnoma</span><span data-fr="Portfolio personnel · Conçu avec soin" data-en="Personal portfolio · Built with care">Portfolio personnel · Conçu avec soin</span></div></footer>
+
+  <script>
+    const langBtn = document.getElementById('langBtn');
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    let lang = 'fr';
+    function setLang(next){
+      lang = next;
+      document.documentElement.lang = next;
+      document.querySelectorAll('[data-fr][data-en]').forEach(el => { el.textContent = el.dataset[next]; });
+      langBtn.textContent = next === 'fr' ? 'EN' : 'FR';
+      menuBtn.setAttribute('aria-label', next === 'fr' ? 'Ouvrir le menu' : 'Open menu');
+    }
+    langBtn.addEventListener('click', () => setLang(lang === 'fr' ? 'en' : 'fr'));
+    menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('copyEmail').addEventListener('click', async () => {
+      const notice = document.getElementById('copyNotice');
+      try { await navigator.clipboard.writeText('a.yougbare0039@uca.ac.ma'); notice.textContent = lang === 'fr' ? 'E-mail copié.' : 'Email copied.'; }
+      catch { notice.textContent = 'a.yougbare0039@uca.ac.ma'; }
+    });
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, {threshold:.12});
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
